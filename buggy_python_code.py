@@ -1,11 +1,11 @@
-import sys
 '''this module imports sys'''
-import os
+import sys
 '''this module imports os'''
-import yaml
+import os
 '''this module imports yaml'''
-import flask
+import yaml
 '''this module imports flask'''
+import flask
 
 app = flask.Flask(__name__)
 

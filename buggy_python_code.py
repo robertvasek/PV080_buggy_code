@@ -1,7 +1,11 @@
-import sys 
+import sys
+'''this module imports sys'''
 import os
+'''this module imports os'''
 import yaml
+'''this module imports yaml'''
 import flask
+'''this module imports flask'''
 
 app = flask.Flask(__name__)
 
@@ -20,14 +24,15 @@ class Person(object):
 
 
 def print_nametag(format_string, person):
+    '''prints nametag'''
     print(format_string.format(person=person))
 
 
 def fetch_website(urllib_version, url):
+    '''fetches website'''
     # Import the requested version (2 or 3) of urllib
     exec(f"import urllib{urllib_version} as urllib", globals())
     # Fetch and print the requested URL
- 
     try: 
         http = urllib.PoolManager()
         r = http.request('GET', url)
@@ -36,11 +41,13 @@ def fetch_website(urllib_version, url):
 
 
 def load_yaml(filename):
+    '''loads yaml'''
     stream = open(filename)
     deserialized_data = yaml.load(stream, Loader=yaml.Loader) #deserializing data
     return deserialized_data
     
 def authenticate(password):
+    '''does authentication'''
     # Assert that the password is correct
     assert password == "Iloveyou", "Invalid password!"
     print("Successfully authenticated!")
